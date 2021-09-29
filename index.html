@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- displays site properly based on user's device -->
+	<title>Tip calculator app</title>
+	<!-- font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+	<!-- css -->
+	<link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+	<!-- total / person -> (total + total * tip percent) / no of people -->
+	<img src="./images/logo.svg" alt="splitter">
+	<main id="card">
+
+		<div class="calculate">
+			<h1>Bill</h1>
+			<input type="text" class="bill" placeholder="0" <input type="text"
+				oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" />
+			<h1>Select Tip %</h1>
+			<div class="select-tip">
+				<button data-percent=5>5%</button>
+				<button data-percent=10>10%</button>
+				<button data-percent=15>15%</button>
+				<button data-percent=25>25%</button>
+				<button data-percent=50>50%</button>
+				<input class="custom" type="text" placeholder="Custom" <input type="text"
+					oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" />
+			</div>
+			<h1>Number of People</h1>
+			<p class="error-message hide">Can't be zero</p>
+			<input type="text" class="people" placeholder="0">
+		</div>
+
+		<div class="result">
+			<div class="tip-container">
+				<p>Tip Amount <br><span>/ person</span></p>
+				<p class="output-numbers" id="tip">$0.00</p>
+			</div>
+			<div class="total-container">
+				<p>Total <br> <span>/ person</span></p>
+				<p class="output-numbers" id="total">$0.00</p>
+			</div>
+			<button class="reset" disabled>RESET</button>
+		</div>
+	</main>
+	<script src="./main.js"></script>
+</body>
+
+</html>

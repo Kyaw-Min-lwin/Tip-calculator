@@ -1,0 +1,244 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: hsl(185, 41%, 84%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-family: 'Space Mono', monospace;
+}
+
+img {
+    margin-bottom: 3rem;
+}
+
+main {
+    background-color: white;
+    display: flex;
+    width: 70%;
+    max-width: 850px;
+    border-radius: 10px;
+}
+
+.calculate {
+    width: 55%;
+    margin: 2rem 0 2rem 2rem;
+}
+
+h1 {
+    font-size: 12.5px;
+    margin-bottom: 10px;
+    color: hsl(186, 14%, 43%);
+}
+
+.bill {
+    background: url(./images/icon-dollar.svg);
+    margin-bottom: 2rem;
+}
+
+.people {
+    background: url(./images/icon-person.svg);
+}
+
+.bill, .people, .custom {
+    width: 80%;
+    background-color: hsl(189, 41%, 97%);
+    background-position: 5% center;
+    background-repeat: no-repeat;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    text-align: right;
+    padding: 10px;
+    color: hsl(183, 100%, 15%);
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+::placeholder {
+    color: hsl(184, 14%, 56%);
+    font-family: 'Space Mono', monospace;
+}
+
+.select-tip {
+    margin: 0rem 0 2rem 0rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 85%;
+}
+
+.select-tip button {
+    width: 7rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    background-color: hsl(183, 100%, 15%);
+    color: white;
+    padding: 10px 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.active, .select-tip button:hover {
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+}
+
+.custom {
+    width: 7rem;
+}
+
+.custom::placeholder {
+    color: hsl(186, 14%, 43%);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.custom, .bill, .people {
+    border: 2px solid transparent;
+}
+
+.custom:focus, .bill:focus, .people:focus {
+    border: 2px solid hsl(172, 67%, 45%);
+}
+
+.result {
+    width: 40%;
+    background-color: hsl(183, 100%, 15%);
+    margin: 2rem 1.5rem 2rem 0;
+    border-radius: 10px;
+}
+
+.result p {
+    font-size: 1rem;
+    margin: 2rem 0 1rem 2rem;
+    color: white;
+    font-weight: 700;
+}
+
+span {
+    color: hsl(184, 14%, 56%);
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+
+.tip-container, .total-container {
+    position: relative;
+    margin-right: 1rem;
+}
+
+.result .output-numbers {
+    position: absolute;
+    right: -1.4rem;
+    top: -2.9rem;
+    color: #26c0ab;
+    font-size: 2.2rem;
+    font-weight: 700;
+    width: 50%;
+    overflow: auto;
+}
+
+.total-container {
+    margin-bottom: 6.6rem;
+}
+
+.reset {
+    width: 80%;
+    padding: 12px 0 12px 0;
+    display: block;
+    margin: 0 auto;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: hsl(183, 100%, 15%);
+    background-color: #26c0ab;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.reset:hover {
+    background-color: #a1e8e0;
+}
+
+.reset:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.reset:disabled:hover {
+    background-color: hsl(171, 6%, 39%);
+}
+
+.error {
+    border: 2px solid red;
+}
+
+.error:focus {
+    border-color: red;
+}
+
+.error-message {
+    font-size: 12px;
+    float: right;
+    margin-right: 6rem;
+    font-weight: 500;
+    color: red;
+}
+
+.hide {
+    display: none;
+}
+
+@media (min-width:850px) and (max-width:1200px) {
+    main {
+        width: 80%;
+    }
+    .select-tip button, .custom {
+        width: 5.9rem;
+    }
+    .result .output-numbers {
+        font-size: 1.9rem;
+    }
+}
+
+@media (max-width:849px) {
+    img {
+        margin-top: 2rem;
+    }
+    main {
+        flex-direction: column;
+        width: 100%;
+        max-width: 470px;
+        margin: 0 auto;
+    }
+    .calculate {
+        width: 100%;
+    }
+    .select-tip button, .custom {
+        width: 8rem;
+    }
+    .result {
+        width: 90%;
+        margin: 0 auto 2rem;
+    }
+    .result .output-numbers {
+        font-size: 1.8rem;
+        top: -2.6rem;
+    }
+    .total-container {
+        margin-bottom: 1.5rem;
+    }
+    .reset {
+        margin-bottom: 1rem;
+    }
+}
