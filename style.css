@@ -148,6 +148,10 @@ span {
     overflow: auto;
 }
 
+::-webkit-scrollbar {
+    display: none
+}
+
 .total-container {
     margin-bottom: 6.6rem;
 }

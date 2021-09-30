@@ -6,7 +6,7 @@ let tipHtml = document.querySelector('#tip');
 let totalHtml = document.querySelector('#total');
 let resetBtn = document.querySelector('.reset');
 let errorMessage = document.querySelector('.error-message')
-let tip = 0, total = 0, billamount = 0, numberOfPeople = 0;
+let tip = 0, total = 0, billamount = 0, numberOfPeople = 1;
 
 
 // preventing false inputs
@@ -19,6 +19,10 @@ bill.addEventListener('input', () => {
 people.addEventListener('input', () => {
     people.value = people.value.replace(/[^\d]/, '');
     numberOfPeople = people.value * 1;
+    if (numberOfPeople <= 0) {
+
+        people.placeholder = 0
+    }
     calculateTip();
     calculateTotal()
 })
